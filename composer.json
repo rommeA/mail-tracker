@@ -34,12 +34,12 @@
     },
     "autoload": {
         "psr-4": {
-            "rommeA\\MailTracker\\": "src"
+            "rommea\\MailTracker\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "rommeA\\MailTracker\\Tests\\": "tests"
+            "rommea\\MailTracker\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -48,7 +48,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "rommeA\\MailTracker\\MailTrackerServiceProvider"
+                "rommea\\MailTracker\\MailTrackerServiceProvider"
             ]
         }
     }
