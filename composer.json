@@ -1,9 +1,9 @@
 {
-    "name": "rommeA/mail-tracker",
+    "name": "rommea/mail-tracker",
     "type": "library",
     "description": "Logs and tracks all outgoing emails from Laravel",
     "keywords": [
-        "rommeA",
+        "rommea",
         "MailTracker"
     ],
     "minimum-stability": "dev",
