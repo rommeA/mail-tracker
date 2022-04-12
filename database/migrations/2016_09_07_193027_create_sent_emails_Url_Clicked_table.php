@@ -17,10 +17,11 @@ class CreateSentEmailsUrlClickedTable extends Migration
         Schema::connection((new SentEmailUrlClicked())->getConnectionName())->create('sent_emails_url_clicked', function (Blueprint $table) {
             if (config('mail-tracker.use_uuids')) {
                 $table->uuid('id')->primary();
+                $table->uuid('sent_email_id')->unsigned();
             } else {
                 $table->increments('id');
+                $table->integer('sent_email_id')->unsigned();
             }
-            $table->integer('sent_email_id')->unsigned();
             $table->foreign('sent_email_id')->references('id')->on('sent_emails')->onDelete('cascade');
             $table->text('url')->nullable();
             $table->char('hash', 32);
