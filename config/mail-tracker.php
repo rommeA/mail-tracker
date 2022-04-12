@@ -87,4 +87,10 @@ return [
      * Size limit for content length stored in database
      */
     'content-max-size' => 65535,
+
+    /**
+     * Determines if you need your models to use UUIDs as primary keys.
+     *  Column name remains unchanged - `id`.
+     */
+    'use_uuids' => false
 ];
