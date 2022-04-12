@@ -1,6 +1,6 @@
 <?php
 
-namespace jdavidbakr\MailTracker;
+namespace rommea\MailTracker;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Support\Facades\Event;
@@ -8,10 +8,10 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use jdavidbakr\MailTracker\Model\SentEmail;
-use jdavidbakr\MailTracker\Events\LinkClickedEvent;
-use jdavidbakr\MailTracker\Model\SentEmailUrlClicked;
-use jdavidbakr\MailTracker\Events\EmailDeliveredEvent;
+use rommea\MailTracker\Model\SentEmail;
+use rommea\MailTracker\Events\LinkClickedEvent;
+use rommea\MailTracker\Model\SentEmailUrlClicked;
+use rommea\MailTracker\Events\EmailDeliveredEvent;
 
 class RecordLinkClickJob implements ShouldQueue
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace jdavidbakr\MailTracker;
+namespace rommea\MailTracker;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -8,9 +8,9 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Event;
-use jdavidbakr\MailTracker\Events\PermanentBouncedMessageEvent;
-use jdavidbakr\MailTracker\Events\TransientBouncedMessageEvent;
-use jdavidbakr\MailTracker\Model\SentEmail;
+use rommea\MailTracker\Events\PermanentBouncedMessageEvent;
+use rommea\MailTracker\Events\TransientBouncedMessageEvent;
+use rommea\MailTracker\Model\SentEmail;
 
 class RecordBounceJob implements ShouldQueue
 {

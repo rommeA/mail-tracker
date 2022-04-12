@@ -1,13 +1,13 @@
 <?php
 
-namespace jdavidbakr\MailTracker\Tests;
+namespace rommea\MailTracker\Tests;
 
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Str;
-use jdavidbakr\MailTracker\Events\PermanentBouncedMessageEvent;
-use jdavidbakr\MailTracker\Events\TransientBouncedMessageEvent;
-use jdavidbakr\MailTracker\Model\SentEmail;
-use jdavidbakr\MailTracker\RecordBounceJob;
+use rommea\MailTracker\Events\PermanentBouncedMessageEvent;
+use rommea\MailTracker\Events\TransientBouncedMessageEvent;
+use rommea\MailTracker\Model\SentEmail;
+use rommea\MailTracker\RecordBounceJob;
 
 class RecordBounceJobTest extends SetUpTest
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace jdavidbakr\MailTracker;
+namespace rommea\MailTracker;
 
 use App\Http\Requests;
 use Event;
@@ -8,10 +8,10 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use jdavidbakr\MailTracker\Events\LinkClickedEvent;
-use jdavidbakr\MailTracker\Exceptions\BadUrlLink;
-use jdavidbakr\MailTracker\RecordLinkClickJob;
-use jdavidbakr\MailTracker\RecordTrackingJob;
+use rommea\MailTracker\Events\LinkClickedEvent;
+use rommea\MailTracker\Exceptions\BadUrlLink;
+use rommea\MailTracker\RecordLinkClickJob;
+use rommea\MailTracker\RecordTrackingJob;
 use Response;
 
 class MailTrackerController extends Controller
