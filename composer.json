@@ -1,19 +1,19 @@
 {
-    "name": "jdavidbakr/mail-tracker",
+    "name": "rommeA/mail-tracker",
     "type": "library",
     "description": "Logs and tracks all outgoing emails from Laravel",
     "keywords": [
-        "jdavidbakr",
+        "rommeA",
         "MailTracker"
     ],
     "minimum-stability": "dev",
-    "homepage": "https://github.com/jdavidbakr/MailTracker",
+    "homepage": "https://github.com/rommeA/MailTracker",
     "license": "MIT",
     "authors": [
         {
-            "name": "J David Baker",
-            "email": "me@jdavidbaker.com",
-            "homepage": "http://www.jdavidbaker.com",
+            "name": "Anna Romme",
+            "email": "anna.romme22@gmail.com",
+            "homepage": "",
             "role": "Developer"
         }
     ],
@@ -34,12 +34,12 @@
     },
     "autoload": {
         "psr-4": {
-            "jdavidbakr\\MailTracker\\": "src"
+            "rommeA\\MailTracker\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "jdavidbakr\\MailTracker\\Tests\\": "tests"
+            "rommeA\\MailTracker\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -48,7 +48,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "jdavidbakr\\MailTracker\\MailTrackerServiceProvider"
+                "rommeA\\MailTracker\\MailTrackerServiceProvider"
             ]
         }
     }
