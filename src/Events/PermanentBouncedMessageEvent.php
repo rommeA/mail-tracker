@@ -1,10 +1,10 @@
 <?php
 
-namespace jdavidbakr\MailTracker\Events;
+namespace rommea\MailTracker\Events;
 
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use jdavidbakr\MailTracker\Model\SentEmail;
+use rommea\MailTracker\Model\SentEmail;
 
 class PermanentBouncedMessageEvent implements ShouldQueue
 {

@@ -1,17 +1,17 @@
 <?php
 
-namespace jdavidbakr\MailTracker\Tests;
+namespace rommea\MailTracker\Tests;
 
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Event;
-use jdavidbakr\MailTracker\Model\SentEmail;
-use jdavidbakr\MailTracker\RecordBounceJob;
-use jdavidbakr\MailTracker\RecordDeliveryJob;
-use jdavidbakr\MailTracker\RecordTrackingJob;
-use jdavidbakr\MailTracker\RecordComplaintJob;
-use jdavidbakr\MailTracker\RecordLinkClickJob;
-use jdavidbakr\MailTracker\Events\ViewEmailEvent;
-use jdavidbakr\MailTracker\Events\LinkClickedEvent;
+use rommea\MailTracker\Model\SentEmail;
+use rommea\MailTracker\RecordBounceJob;
+use rommea\MailTracker\RecordDeliveryJob;
+use rommea\MailTracker\RecordTrackingJob;
+use rommea\MailTracker\RecordComplaintJob;
+use rommea\MailTracker\RecordLinkClickJob;
+use rommea\MailTracker\Events\ViewEmailEvent;
+use rommea\MailTracker\Events\LinkClickedEvent;
 
 class RecordTrackingJobTest extends SetUpTest
 {
@@ -21,11 +21,11 @@ class RecordTrackingJobTest extends SetUpTest
     public function it_records_views()
     {
         Event::fake();
-        $track = \jdavidbakr\MailTracker\Model\SentEmail::create([
+        $track = \rommea\MailTracker\Model\SentEmail::create([
                 'hash' => Str::random(32),
             ]);
         $job = new RecordTrackingJob($track, '127.0.0.1');
-        
+
         $job->handle();
 
         Event::assertDispatched(ViewEmailEvent::class, function ($e) use ($track) {

@@ -1,15 +1,15 @@
 <?php
 
-namespace jdavidbakr\MailTracker\Tests;
+namespace rommea\MailTracker\Tests;
 
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Event;
-use jdavidbakr\MailTracker\Model\SentEmail;
-use jdavidbakr\MailTracker\RecordBounceJob;
-use jdavidbakr\MailTracker\RecordDeliveryJob;
-use jdavidbakr\MailTracker\RecordComplaintJob;
-use jdavidbakr\MailTracker\Events\EmailDeliveredEvent;
-use jdavidbakr\MailTracker\Events\ComplaintMessageEvent;
+use rommea\MailTracker\Model\SentEmail;
+use rommea\MailTracker\RecordBounceJob;
+use rommea\MailTracker\RecordDeliveryJob;
+use rommea\MailTracker\RecordComplaintJob;
+use rommea\MailTracker\Events\EmailDeliveredEvent;
+use rommea\MailTracker\Events\ComplaintMessageEvent;
 
 class RecordDeliveryJobTest extends SetUpTest
 {

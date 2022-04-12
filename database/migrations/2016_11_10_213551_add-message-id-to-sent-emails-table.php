@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use jdavidbakr\MailTracker\Model\SentEmail;
+use rommea\MailTracker\Model\SentEmail;
 
 class AddMessageIdToSentEmailsTable extends Migration
 {
