@@ -17,7 +17,13 @@ class SentEmailUrlClicked extends Model
         'clicks',
     ];
 
-    protected $keyType = 'string';
+    protected $keyType = 'int';
+
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+        $this->keyType = (config('mail-tracker.use_uuids')) ? 'string' : 'int';
+    }
 
     public function getConnectionName()
     {
