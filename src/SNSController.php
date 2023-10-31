@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 use GuzzleHttp\Client as Guzzle;
 use Aws\Sns\Message as SNSMessage;
 use Illuminate\Routing\Controller;
-use jdavidbakr\MailTracker\Model\SentEmail;
 use jdavidbakr\MailTracker\RecordBounceJob;
 use jdavidbakr\MailTracker\RecordDeliveryJob;
 use jdavidbakr\MailTracker\RecordComplaintJob;
@@ -27,7 +26,15 @@ class SNSController extends Controller
             // for SNSMessage we have to pass the json data in $request->message
             $message = new SNSMessage(json_decode($request->message, true));
         } else {
-            $message = SNSMessage::fromRawPostData();
+            // get body from request
+            $body = $request->getContent();
+
+            // Make sure the SNS-provided header exists.
+            if (!isset($_SERVER['HTTP_X_AMZ_SNS_MESSAGE_TYPE'])) {
+                throw new \RuntimeException('SNS message type header not provided.');
+            }
+
+            $message = SNSMessage::fromJsonString($body);
             $validator = app(SNSMessageValidator::class);
             $validator->validate($message);
         }

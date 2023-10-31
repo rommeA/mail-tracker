@@ -8,7 +8,6 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use jdavidbakr\MailTracker\Model\SentEmail;
 use jdavidbakr\MailTracker\Events\ComplaintMessageEvent;
 
 class RecordComplaintJob implements ShouldQueue
@@ -19,6 +18,13 @@ class RecordComplaintJob implements ShouldQueue
     use SerializesModels;
 
     public $message;
+
+    /**
+     * The maximum number of unhandled exceptions to allow before failing.
+     *
+     * @var int
+     */
+    public $maxExceptions = 3;
 
     public function __construct($message)
     {
@@ -32,7 +38,7 @@ class RecordComplaintJob implements ShouldQueue
 
     public function handle()
     {
-        $sent_email = SentEmail::where('message_id', $this->message->mail->messageId)->first();
+        $sent_email = MailTracker::sentEmailModel()->newQuery()->where('message_id', $this->message->mail->messageId)->first();
         if ($sent_email) {
             $meta = collect($sent_email->meta);
             $meta->put('complaint', true);
