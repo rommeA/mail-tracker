@@ -1,9 +1,14 @@
 <?php
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+
+use jdavidbakr\MailTracker\MailTracker;
+
 use Illuminate\Support\Facades\DB;
 use jdavidbakr\MailTracker\Model\SentEmailUrlClicked;
+
 
 class CreateSentEmailsUrlClickedTable extends Migration
 {
@@ -14,7 +19,8 @@ class CreateSentEmailsUrlClickedTable extends Migration
      */
     public function up()
     {
-        Schema::connection((new SentEmailUrlClicked())->getConnectionName())->create('sent_emails_url_clicked', function (Blueprint $table) {
+
+        Schema::connection(MailTracker::sentEmailUrlClickedModel()->getConnectionName())->create('sent_emails_url_clicked', function (Blueprint $table) {
             if (config('mail-tracker.use_uuids')) {
                 $table->uuid('id')->primary();
                 $table->uuid('sent_email_id')->unsigned();
@@ -40,6 +46,6 @@ class CreateSentEmailsUrlClickedTable extends Migration
      */
     public function down()
     {
-        Schema::connection((new SentEmailUrlClicked())->getConnectionName())->drop('sent_emails_url_clicked');
+        Schema::connection(MailTracker::sentEmailUrlClickedModel()->getConnectionName())->drop('sent_emails_url_clicked');
     }
 }

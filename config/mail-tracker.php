@@ -79,6 +79,18 @@ return [
     'log-content' => true,
 
     /**
+     * Determines whether the body should be stored in a file instead of database
+     * Can be either 'database' or 'filesystem'
+     */
+    'log-content-strategy' => 'database',
+
+    /**
+     * What filesystem we use for storing content html files
+     */
+    'tracker-filesystem' => null,
+    'tracker-filesystem-folder' => 'mail-tracker',
+
+    /**
      * What queue should we dispatch our tracking jobs to?  Null will use the default queue.
      */
     'tracker-queue' => null,
@@ -89,6 +101,11 @@ return [
     'content-max-size' => 65535,
 
     /**
+     * Length of time to default past email search - if set, will set the default past limit to the amount of days below (Ex: => 356)
+     */
+    'search-date-start' => null,
+  
+     /**
      * Determines if you need your models to use UUIDs as primary keys.
      *  Column name remains unchanged - `id`.
      */
