@@ -1,15 +1,21 @@
 {
-    "name": "jdavidbakr/mail-tracker",
+    "name": "rommea/mail-tracker",
     "type": "library",
     "description": "Logs and tracks all outgoing emails from Laravel",
     "keywords": [
-        "jdavidbakr",
+        "rommea",
         "MailTracker"
     ],
     "minimum-stability": "dev",
-    "homepage": "https://github.com/jdavidbakr/MailTracker",
+    "homepage": "https://github.com/rommeA/MailTracker",
     "license": "MIT",
     "authors": [
+        {
+            "name": "Anna Romme",
+            "email": "anna.romme22@gmail.com",
+            "homepage": "",
+            "role": "Developer"
+        },
         {
             "name": "J David Baker",
             "email": "me@jdavidbaker.com",

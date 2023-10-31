@@ -19,4 +19,24 @@ class SentEmailUrlClicked extends Model implements SentEmailUrlClickedModel
         'hash',
         'clicks',
     ];
+
+    protected $keyType = 'int';
+
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+        $this->keyType = (config('mail-tracker.use_uuids')) ? 'string' : 'int';
+    }
+
+    public function getConnectionName()
+    {
+        $connName = config('mail-tracker.connection');
+        return $connName ?: config('database.default');
+    }
+
+    public function email()
+    {
+        return $this->belongsTo(SentEmail::class, 'sent_email_id');
+    }
+
 }

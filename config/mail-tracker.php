@@ -104,4 +104,10 @@ return [
      * Length of time to default past email search - if set, will set the default past limit to the amount of days below (Ex: => 356)
      */
     'search-date-start' => null,
+  
+     /**
+     * Determines if you need your models to use UUIDs as primary keys.
+     *  Column name remains unchanged - `id`.
+     */
+    'use_uuids' => false
 ];
