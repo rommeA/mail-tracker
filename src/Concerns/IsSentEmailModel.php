@@ -83,7 +83,7 @@ trait IsSentEmailModel
             if ($meta->get('complaint_type')) {
                 $responses[] = 'Complaint: '.$meta->get('complaint_type').' at '.$complaint_time;
             } else {
-                $responses[] = 'Complaint at '.$complaint_time->format("n/d/y g:i a");
+                $responses[] = 'Complaint at '.$complaint_time;
             }
         }
         return implode(" | ", $responses);
