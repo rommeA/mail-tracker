@@ -83,7 +83,7 @@ trait IsSentEmailModel
             if ($meta->get('complaint_type')) {
                 $responses[] = 'Complaint: '.$meta->get('complaint_type').' at '.$complaint_time;
             } else {
-                $responses[] = 'Complaint at '.$complaint_time->format("n/d/y g:i a");
+                $responses[] = 'Complaint at '.$complaint_time;
             }
         }
         return implode(" | ", $responses);
@@ -187,7 +187,7 @@ trait IsSentEmailModel
         // handling database strategy
         if ($logContentStrategy === 'database') {
             $databaseContent = Str::length($originalHtml) > config('mail-tracker.content-max-size', 65535)
-                ? Str::substr($originalHtml, 0, config('mail-tracker.content-max-size', 65535)) . '...'
+                ? Str::substr($originalHtml, 0, config('mail-tracker.content-max-size', 65535) - 3) . '...'
                 : $originalHtml;
         }
 
